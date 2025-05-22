@@ -1,54 +1,75 @@
-# React + TypeScript + Vite
+# Auth Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A TypeScript + React + Vite project that demonstrates a login interface and a protected data dashboard. This project showcases the use of a Context Factory, authorized routes, useReducer, and mock API functions to simulate authentication and data fetching. The UI is built using TailwindCSS and is visually polished.
 
-Currently, two official plugins are available:
+## 🔧 Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Project Setup
+- React with Vite (vite + react-ts)
+- TailwindCSS pre-configured
+- ESLint + Prettier (recommended but optional)
 
-## Expanding the ESLint configuration
+### Auth Flow
+- AuthProvider using Context + useReducer (Context Factory pattern)
+- Login/logout functions and token simulation (no real backend)
+- Persist auth state in localStorage
+- A useAuth() hook for easy consumption
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Mock API
+- Simulate fetch calls with setTimeout to mock async login and dashboard data retrieval
+- Mock login with fixed credentials (e.g., user@example.com / password)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Routing
+- Use React Router DOM
+- Create a ProtectedRoute HOC or wrapper component to guard dashboard routes
+- Unauthenticated users should be redirected to login
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Pages
+- /login: login form (email/password fields)
+- /dashboard: authenticated-only route showing mock data cards
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Dashboard UI
+- TailwindCSS components (charts, metric cards, layout)
+- Use placeholder data from mock API
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Stretch Goals (optional)
+- Add a loading spinner for fetch delays
+- Add dark mode toggle
+- Show toast notifications for login success/failure
+
+## 🚀 Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 📁 Project Structure
+
+- `src/api/` - Mock API functions for auth and dashboard
+- `src/components/` - Reusable components (ProtectedRoute, Spinner, Toast)
+- `src/context/` - AuthContext and AuthProvider
+- `src/hooks/` - useAuth hook
+- `src/pages/` - Login and Dashboard pages
+- `src/types/` - TypeScript interfaces for auth and dashboard
+
+## 🔍 Features
+
+- **Authentication**: Simulated login/logout with localStorage persistence
+- **Protected Routes**: Dashboard is only accessible when authenticated
+- **Mock Data**: Simulated KPIs and transactions for the dashboard
+- **Responsive UI**: Built with TailwindCSS for a modern look
+
+## 🛠️ Technologies Used
+
+- React
+- TypeScript
+- Vite
+- TailwindCSS
+- React Router DOM
+- Context API + useReducer
