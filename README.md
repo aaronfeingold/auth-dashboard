@@ -2,7 +2,7 @@
 
 A TypeScript + React + Vite project that demonstrates a login interface and a protected data dashboard. This project showcases the use of a Context Factory, authorized routes, useReducer, and mock API functions to simulate authentication and data fetching. The UI is built using TailwindCSS and is visually polished.
 
-## 🔧 Requirements
+## Requirements
 
 ### Project Setup
 - React with Vite (vite + react-ts)
@@ -37,7 +37,7 @@ A TypeScript + React + Vite project that demonstrates a login interface and a pr
 - Add dark mode toggle
 - Show toast notifications for login success/failure
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Clone the repository
 2. Install dependencies:
@@ -49,7 +49,7 @@ A TypeScript + React + Vite project that demonstrates a login interface and a pr
    npm run dev
    ```
 
-## 📁 Project Structure
+## Project Structure
 
 - `src/api/` - Mock API functions for auth and dashboard
 - `src/components/` - Reusable components (ProtectedRoute, Spinner, Toast)
@@ -58,14 +58,14 @@ A TypeScript + React + Vite project that demonstrates a login interface and a pr
 - `src/pages/` - Login and Dashboard pages
 - `src/types/` - TypeScript interfaces for auth and dashboard
 
-## 🔍 Features
+## Features
 
 - **Authentication**: Simulated login/logout with localStorage persistence
 - **Protected Routes**: Dashboard is only accessible when authenticated
 - **Mock Data**: Simulated KPIs and transactions for the dashboard
 - **Responsive UI**: Built with TailwindCSS for a modern look
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - React
 - TypeScript
